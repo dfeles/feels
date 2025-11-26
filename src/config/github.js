@@ -9,6 +9,7 @@ export const GITHUB_CONFIG = {
 export const getGitHubImageUrl = (imagePath) => {
   // Remove leading slash if present
   const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath
-  return `https://raw.githubusercontent.com/${GITHUB_CONFIG.username}/${GITHUB_CONFIG.repo}/${GITHUB_CONFIG.branch}/${cleanPath}`
+  // Images are in public/images/ in the repo, so prepend 'public/'
+  return `https://raw.githubusercontent.com/${GITHUB_CONFIG.username}/${GITHUB_CONFIG.repo}/${GITHUB_CONFIG.branch}/public/${cleanPath}`
 }
 
