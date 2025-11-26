@@ -1,0 +1,103 @@
+{
+  "intro": {
+    "title": "feels",
+    "subtitle": "like a double slit experiment",
+    "description": "∞ work in progress",
+    "bioIcon": "/images/sdCczq05YnZRlZkrRB9kB5AuCw.png",
+    "bio": "Nothing shook my world quite like **Kitchen Budapest** when I first walked in at 17 and got an internship offer.\n\nI was ready to learn everything.\n\nThis site is my way of summarizing my ride since then.",
+    "bioLink": {
+      "text": "Kitchen Budapest",
+      "url": "https://issuu.com/kitchenbudapest/docs/kibu-2007-summer/72"
+    },
+    "name": "Daniel Feles"
+  },
+  "sections": {
+    "tech": {
+      "title": "tech",
+      "items": [
+        {
+          "company": "MindOne",
+          "role": "Co-founder",
+          "period": "Currently building",
+          "url": "https://mindone.app",
+          "icon": "/images/m1.png"
+        },
+        {
+          "company": "BitRaptors",
+          "role": "Co-founder",
+          "period": "Since 2020",
+          "url": "https://bitraptors.com",
+          "icon": "/images/raptor.svg"
+        },
+        {
+          "company": "Freelancing",
+          "role": "Lead Designer",
+          "period": "2017-2020",
+          "url": "https://www.linkedin.com/in/danielfeles/",
+          "icon": "/images/freelancing.png"
+        },
+        {
+          "company": "SkyScanner",
+          "role": "Sr Product Designer",
+          "period": "2015-2017",
+          "url": "https://www.linkedin.com/in/danielfeles/",
+          "icon": "/images/sky.png"
+        },
+        {
+          "company": "Prezi",
+          "role": "Product Designer",
+          "period": "2012-2015",
+          "url": "https://www.linkedin.com/in/danielfeles/",
+          "icon": "/images/prezi.png"
+        },
+        {
+          "company": "Kitchen Budapest",
+          "role": "Researcher",
+          "period": "2007-2012",
+          "url": "https://issuu.com/kitchenbudapest/docs/kibu_2010_web/163",
+          "icon": "/images/kibu.png"
+        }
+      ]
+    },
+    "art": {
+      "title": "art",
+      "items": [
+        {
+          "title": "exploration / exploitation",
+          "period": "2023-",
+          "image": "/images/exploration.jpg"
+        },
+        {
+          "title": "murmuration",
+          "period": "2020-",
+          "image": "/images/murmur.png"
+        },
+        {
+          "title": "undestanding a mountain",
+          "period": "2020",
+          "image": "/images/mountain.png"
+        },
+        {
+          "title": "processing stuff",
+          "period": "2019",
+          "image": "/images/processingstuff.jpg"
+        },
+        {
+          "title": "sketches",
+          "period": "2010-2019",
+          "image": "/images/sketches.png"
+        }
+      ]
+    },
+    "thoughts": {
+      "title": "thoughts",
+      "items": [
+        {
+          "title": "coming soon",
+          "image": "/images/thoughts.jpg"
+        }
+      ]
+    }
+  }
+}
+
