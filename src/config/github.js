@@ -8,11 +8,12 @@ export const GITHUB_CONFIG = {
 // Helper function to get GitHub raw content URL
 export const getGitHubImageUrl = (imagePath) => {
   // In development, use local images for faster iteration
+  // import.meta.env.DEV is true in dev mode, false in production builds
   if (import.meta.env.DEV) {
     return imagePath
   }
   
-  // In production, use GitHub raw URLs
+  // In production (Vercel), use GitHub raw URLs
   // Remove leading slash if present
   const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath
   // Images are in public/images/ in the repo, so prepend 'public/'

@@ -278,12 +278,12 @@
 }
 
 .item-period {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 400;
   margin: 2px 0 0 0;
   padding: 0;
-  line-height: 16px;
-  color: rgb(102, 102, 102);
+  line-height: 14.4px;
+  color: rgb(0, 0, 0);
   font-family: "Abyssinica SIL", serif;
 }
 
@@ -344,14 +344,23 @@
   gap: 0;
 }
 
-.art-content .item-title,
-.art-content .item-period {
+.art-content .item-title {
   font-size: 14px;
   line-height: 16.8px;
   font-family: "Abyssinica SIL", serif;
   color: rgb(0, 0, 0);
   font-weight: 400;
   margin: 0;
+  padding: 0;
+}
+
+.art-content .item-period {
+  font-size: 12px;
+  line-height: 14.4px;
+  font-family: "Abyssinica SIL", serif;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  margin: 2px 0 0 0;
   padding: 0;
 }
 

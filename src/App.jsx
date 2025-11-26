@@ -112,7 +112,7 @@ function App() {
                           )}
                           <div className="art-content">
                             <p className="item-title"><strong>{item.title}</strong></p>
-                            {item.period && <p className="item-period"><strong>{item.period}</strong></p>}
+                            {item.period && <p className="item-period">{item.period}</p>}
                           </div>
                         </div>
                       )
