@@ -7,7 +7,7 @@ export const GITHUB_CONFIG = {
 
 // Helper function to get GitHub raw content URL
 export const getGitHubImageUrl = (imagePath) => {
-  // In development, use local images
+  // In development, use local images for faster iteration
   if (import.meta.env.DEV) {
     return imagePath
   }
