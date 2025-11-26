@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import contentData from './config/content.json'
-import { getGitHubImageUrl } from './config/github'
 import './App.css'
 
 function App() {
@@ -58,7 +57,7 @@ function App() {
           </div>
           <div className="bio-section">
             {content.intro.bioIcon && (
-              <img src={getGitHubImageUrl(content.intro.bioIcon)} alt="bio" className="bio-icon" />
+              <img src={content.intro.bioIcon} alt="bio" className="bio-icon" />
             )}
             <div className="bio-content">
               <div className="bio">{renderMarkdown(content.intro.bio, content.intro.bioLink)}</div>
@@ -81,7 +80,7 @@ function App() {
                       const techContent = (
                         <>
                           {item.icon && (
-                            <img src={getGitHubImageUrl(item.icon)} alt={item.company} className="tech-icon" />
+                            <img src={item.icon} alt={item.company} className="tech-icon" />
                           )}
                           <div className="item-content">
                             <p className="item-company"><strong>{item.company}</strong></p>
@@ -108,7 +107,7 @@ function App() {
                       return (
                         <div key={index} className="art-item">
                           {item.image && (
-                            <img src={getGitHubImageUrl(item.image)} alt={item.title} className="art-image" />
+                            <img src={item.image} alt={item.title} className="art-image" />
                           )}
                           <div className="art-content">
                             <p className="item-title"><strong>{item.title}</strong></p>
@@ -122,7 +121,7 @@ function App() {
                     return (
                       <div key={index} className="section-item thoughts-item">
                         {item.image && (
-                          <img src={getGitHubImageUrl(item.image)} alt={item.title} className="thoughts-image" />
+                          <img src={item.image} alt={item.title} className="thoughts-image" />
                         )}
                         <p className="thoughts-subtitle">{item.title}</p>
                       </div>
