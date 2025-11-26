@@ -65,6 +65,26 @@ The `vercel.json` file is already configured with:
 - Output directory: `dist`
 - SPA routing (all routes serve `index.html`)
 
+## Configuration
+
+### GitHub Image Hosting
+
+Images are loaded from your GitHub repository using raw content URLs. To configure this:
+
+1. Open `src/config/github.js`
+2. Update the `GITHUB_CONFIG` object with your GitHub username and repository name:
+```javascript
+export const GITHUB_CONFIG = {
+  username: 'your-github-username', // Your GitHub username
+  repo: 'feels', // Your repository name
+  branch: 'main' // Usually 'main' or 'master'
+}
+```
+
+Images will be loaded from: `https://raw.githubusercontent.com/USERNAME/REPO/BRANCH/public/images/...`
+
+**Note:** Make sure your images are committed and pushed to the GitHub repository for them to be accessible.
+
 ## Customizing Content
 
 All content is stored in `src/config/content.json`. Simply edit this file to update:
