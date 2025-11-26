@@ -16,6 +16,13 @@
       "title": "tech",
       "items": [
         {
+          "company": "defaultmodenetwork.cc",
+          "role": "nothing",
+          "period": "always",
+          "url": "https://defaultmodenetwork.cc",
+          "icon": "🐦‍⬛"
+        },
+        {
           "company": "MindOne",
           "role": "Co-founder",
           "period": "Currently building",

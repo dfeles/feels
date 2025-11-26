@@ -81,7 +81,11 @@ function App() {
                       const techContent = (
                         <>
                           {item.icon && (
-                            <img src={getGitHubImageUrl(item.icon)} alt={item.company} className="tech-icon" />
+                            item.icon.startsWith('/') ? (
+                              <img src={getGitHubImageUrl(item.icon)} alt={item.company} className="tech-icon" />
+                            ) : (
+                              <span className="tech-icon-emoji">{item.icon}</span>
+                            )
                           )}
                           <div className="item-content">
                             <p className="item-company"><strong>{item.company}</strong></p>
