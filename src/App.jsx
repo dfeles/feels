@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import contentData from './config/content.json'
 import { getGitHubImageUrl } from './config/github'
+import { DevOverlay } from 'mindone'
 import './App.css'
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
   }, [])
 
   if (!content) {
-    return <div className="loading">Loading...</div>
+    return <div className="flex justify-center items-center min-h-screen text-xs text-gray-600">Loading...</div>
   }
 
   const renderMarkdown = (text, linkData) => {
@@ -28,8 +29,8 @@ function App() {
                 // Check if this matches the link text
                 if (linkData && linkText === linkData.text) {
                   return (
-                    <a key={j} href={linkData.url} target="_blank" rel="noopener noreferrer" className="bio-link">
-                      <strong>{linkText}</strong>
+                    <a key={j} href={linkData.url} target="_blank" rel="noopener noreferrer" className="text-[#0099ff] no-underline hover:underline">
+                      <strong className="font-bold text-[#0099ff]">{linkText}</strong>
                     </a>
                   )
                 }
@@ -45,22 +46,24 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <div className="container">
+    <>
+      <DevOverlay />
+      <div className="min-h-screen p-10 md:p-5">
+        <div className="max-w-[1200px] mx-auto">
         {/* Intro Section */}
-        <div className="intro-section">
-          <div className="intro-header">
-            <div className="intro-header-left">
+        <div className="mb-0">
+          <div className="flex items-baseline justify-between gap-2 mb-[68px] flex-wrap">
+            <div className="flex items-baseline gap-2">
               <p className="title"><strong>{content.intro.title}</strong></p>
               <p className="subtitle">{content.intro.subtitle}</p>
             </div>
             <p className="description">{content.intro.description}</p>
           </div>
-          <div className="bio-section">
+          <div className="flex gap-5 items-start mb-[60px] p-6 bg-[rgb(250,250,250)] rounded max-w-[560px]">
             {content.intro.bioIcon && (
-              <img src={getGitHubImageUrl(content.intro.bioIcon)} alt="bio" className="bio-icon" />
+              <img src={getGitHubImageUrl(content.intro.bioIcon)} alt="bio" className="w-[68px] h-[68px] object-cover flex-shrink-0" />
             )}
-            <div className="bio-content">
+            <div className="flex-1">
               <div className="bio">{renderMarkdown(content.intro.bio, content.intro.bioLink)}</div>
               <p className="name">{content.intro.name}</p>
             </div>
@@ -68,26 +71,26 @@ function App() {
         </div>
 
         {/* Navigation Sections */}
-        <div className="sections">
+        <div className="flex flex-col gap-0">
           {Object.keys(content.sections).map((sectionKey) => {
             const section = content.sections[sectionKey]
 
             return (
-              <div key={sectionKey} className="section">
+              <div key={sectionKey} className="mb-[60px] bg-white rounded">
                 <p className="section-title"><strong>{section.title}</strong></p>
-                <div className={`section-content ${sectionKey === 'tech' ? 'tech-grid' : sectionKey === 'art' ? 'art-grid' : ''}`}>
+                <div className={`block ${sectionKey === 'tech' ? 'tech-grid' : sectionKey === 'art' ? 'art-grid' : ''}`}>
                   {section.items.map((item, index) => {
                     if (sectionKey === 'tech') {
                       const techContent = (
                         <>
                           {item.icon && (
                             item.icon.startsWith('/') ? (
-                              <img src={getGitHubImageUrl(item.icon)} alt={item.company} className="tech-icon" />
+                              <img src={getGitHubImageUrl(item.icon)} alt={item.company} className="w-4 h-auto object-contain flex-shrink-0" />
                             ) : (
-                              <span className="tech-icon-emoji">{item.icon}</span>
+                              <span className="text-base leading-4 flex-shrink-0 inline-block">{item.icon}</span>
                             )
                           )}
-                          <div className="item-content">
+                          <div className="flex flex-col gap-0">
                             <p className="item-company"><strong>{item.company}</strong></p>
                             {item.role && <p className="item-role">{item.role}</p>}
                             {item.period && <p className="item-period">{item.period}</p>}
@@ -101,7 +104,7 @@ function App() {
                           href={item.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="tech-item"
+                          className="flex flex-row items-start gap-2.5 p-2.5 no-underline text-[rgb(0,0,238)] text-xs font-normal bg-[rgb(250,250,250)] border border-transparent rounded transition-colors hover:border-[rgb(200,200,200)]"
                         >
                           {techContent}
                         </a>
@@ -110,13 +113,13 @@ function App() {
 
                     if (sectionKey === 'art') {
                       return (
-                        <div key={index} className="art-item">
+                        <div key={index} className="flex flex-col gap-2.5 p-2.5 bg-[rgb(250,250,250)] rounded">
                           {item.image && (
-                            <img src={getGitHubImageUrl(item.image)} alt={item.title} className="art-image" />
+                            <img src={getGitHubImageUrl(item.image)} alt={item.title} className="w-full h-[200px] object-cover" />
                           )}
-                          <div className="art-content">
-                            <p className="item-title"><strong>{item.title}</strong></p>
-                            {item.period && <p className="item-period">{item.period}</p>}
+                          <div className="flex flex-col gap-0">
+                            <p className="art-item-title"><strong>{item.title}</strong></p>
+                            {item.period && <p className="art-item-period">{item.period}</p>}
                           </div>
                         </div>
                       )
@@ -124,11 +127,13 @@ function App() {
 
                     // thoughts section
                     return (
-                      <div key={index} className="section-item thoughts-item">
+                      <div key={index} className="flex flex-col gap-0">
+                        <div className="flex flex-col gap-4">
                         {item.image && (
-                          <img src={getGitHubImageUrl(item.image)} alt={item.title} className="thoughts-image" />
+                            <img src={getGitHubImageUrl(item.image)} alt={item.title} className="w-[285px] h-auto object-cover" />
                         )}
                         <p className="thoughts-subtitle">{item.title}</p>
+                        </div>
                       </div>
                     )
                   })}
@@ -139,6 +144,7 @@ function App() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
