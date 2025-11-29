@@ -66,7 +66,13 @@ function App() {
             )}
             <div className="flex-1">
               <div className="bio">
-                <p>Nothing shook my world quite like <HoverableText image={getGitHubImageUrl('/images/kibu.jpg')}>Kitchen Budapest</HoverableText> when I first walked in at 17 and got an internship offer.</p>
+                <p>Nothing shook my world quite like <a 
+                  href={getGitHubImageUrl('/images/Kitchen_Budapest_2007-2010_2011.pdf')} 
+                  download="Kitchen_Budapest_2007-2010_2011.pdf"
+                  className="no-underline"
+                >
+                  <HoverableText image={getGitHubImageUrl('/images/kibu.jpg')}>Kitchen Budapest</HoverableText>
+                </a> when I first walked in at 17 and got an internship offer.</p>
                 <p>I was ready to learn everything.</p>
                 <p>This site is my way of summarizing my ride since then.</p>
               </div>
