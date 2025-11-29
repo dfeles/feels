@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import contentData from './config/content.json'
 import { getGitHubImageUrl } from './config/github'
 import { DevOverlay } from 'mindone'
+import { HoverableText } from './components/HoverableText'
 import './App.css'
 
 function App() {
@@ -64,8 +65,12 @@ function App() {
               <img src={getGitHubImageUrl(content.intro.bioIcon)} alt="bio" className="w-[68px] h-[68px] object-cover flex-shrink-0" />
             )}
             <div className="flex-1">
-              <div className="bio">{renderMarkdown(content.intro.bio, content.intro.bioLink)}</div>
-              <p className="name">{content.intro.name}</p>
+              <div className="bio">
+                <p>Nothing shook my world quite like <HoverableText image={getGitHubImageUrl('/images/kibu.jpg')}>Kitchen Budapest</HoverableText> when I first walked in at 17 and got an internship offer.</p>
+                <p>I was ready to learn everything.</p>
+                <p>This site is my way of summarizing my ride since then.</p>
+              </div>
+              <p className="name">Daniel Feles</p>
             </div>
           </div>
         </div>
@@ -85,7 +90,7 @@ function App() {
                         <>
                           {item.icon && (
                             item.icon.startsWith('/') ? (
-                              <img src={getGitHubImageUrl(item.icon)} alt={item.company} className="w-4 h-auto object-contain flex-shrink-0" />
+                              <img src={getGitHubImageUrl(item.icon)} alt={item.company} className="w-4 h-4 object-contain aspect-square flex-shrink-0" />
                             ) : (
                               <span className="text-base leading-4 flex-shrink-0 inline-block">{item.icon}</span>
                             )
@@ -104,7 +109,7 @@ function App() {
                           href={item.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex flex-row items-start gap-2.5 p-2.5 no-underline text-[rgb(0,0,238)] text-xs font-normal bg-[rgb(250,250,250)] border border-transparent rounded transition-colors hover:border-[rgb(200,200,200)]"
+                          className="flex flex-row items-start gap-2.5 p-2.5 no-underline  pr-4 text-[rgb(0,0,238)] text-xs font-normal bg-[rgb(250,250,250)] border border-transparent rounded transition-colors hover:border-[rgb(200,200,200)]"
                         >
                           {techContent}
                         </a>
