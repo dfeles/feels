@@ -109,12 +109,17 @@ function App() {
                         </>
                       )
 
+                      // Use PDF download link for Kitchen Budapest instead of Issuu link
+                      const isKitchenBudapest = item.company === 'Kitchen Budapest'
+                      const linkUrl = isKitchenBudapest 
+                        ? getGitHubImageUrl('/images/Kitchen_Budapest_2007-2010_2011.pdf')
+                        : item.url
+
                       return (
                         <a
                           key={index}
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href={linkUrl}
+                          {...(isKitchenBudapest ? { download: 'Kitchen_Budapest_2007-2010_2011.pdf' } : { target: '_blank', rel: 'noopener noreferrer' })}
                           className="flex flex-row items-start gap-2.5 p-2.5 no-underline  pr-4 text-[rgb(0,0,238)] text-xs font-normal bg-[rgb(250,250,250)] border border-transparent rounded transition-colors hover:border-[rgb(200,200,200)]"
                         >
                           {techContent}
