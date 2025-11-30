@@ -68,7 +68,8 @@ function App() {
               <div className="bio">
                 <p>Nothing shook my world quite like <a 
                   href={getGitHubImageUrl('/images/Kitchen_Budapest_2007-2010_2011.pdf')} 
-                  download="Kitchen_Budapest_2007-2010_2011.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="no-underline"
                 >
                   <HoverableText image={getGitHubImageUrl('/images/kibu.jpg')}>Kitchen Budapest</HoverableText>
@@ -109,7 +110,7 @@ function App() {
                         </>
                       )
 
-                      // Use PDF download link for Kitchen Budapest instead of Issuu link
+                      // Use PDF link for Kitchen Budapest instead of Issuu link
                       const isKitchenBudapest = item.company === 'Kitchen Budapest'
                       const linkUrl = isKitchenBudapest 
                         ? getGitHubImageUrl('/images/Kitchen_Budapest_2007-2010_2011.pdf')
@@ -119,7 +120,8 @@ function App() {
                         <a
                           key={index}
                           href={linkUrl}
-                          {...(isKitchenBudapest ? { download: 'Kitchen_Budapest_2007-2010_2011.pdf' } : { target: '_blank', rel: 'noopener noreferrer' })}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="flex flex-row items-start gap-2.5 p-2.5 no-underline  pr-4 text-[rgb(0,0,238)] text-xs font-normal bg-[rgb(250,250,250)] border border-transparent rounded transition-colors hover:border-[rgb(200,200,200)]"
                         >
                           {techContent}
