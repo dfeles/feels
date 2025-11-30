@@ -1,5 +1,5 @@
 # feels
 
-The website of Daniel Feles.
+The website of daniel feles.
 
 d4ni3l.com
