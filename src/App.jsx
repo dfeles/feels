@@ -3,6 +3,7 @@ import contentData from './config/content.json'
 import { getGitHubImageUrl } from './config/github'
 import { DevOverlay } from 'mindone'
 import { HoverableText } from './components/HoverableText'
+import { PenroseTiling } from './components/PenroseTiling'
 import './App.css'
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
     // Load content from JSON file
     setContent(contentData)
   }, [])
+
+  // Common classes for white background cards
+  const whiteCardClasses = "w-fit bg-white border-slate-100 border transition-colors flex items-start gap-2.5 p-2.5 no-underline text-[rgb(0,0,238)] text-xs font-normal"
 
   if (!content) {
     return <div className="flex justify-center items-center min-h-screen text-xs text-gray-600">Loading...</div>
@@ -30,7 +34,7 @@ function App() {
                 // Check if this matches the link text
                 if (linkData && linkText === linkData.text) {
                   return (
-                    <a key={j} href={linkData.url} target="_blank" rel="noopener noreferrer" className="text-[#0099ff] no-underline hover:underline">
+                    <a key={j} href={linkData.url} target="_blank" rel="noopener noreferrer" className="text-[#0099ff] no-underline hover:underline  pr-4">
                       <strong className="font-bold text-[#0099ff]">{linkText}</strong>
                     </a>
                   )
@@ -49,10 +53,11 @@ function App() {
   return (
     <>
       <DevOverlay />
-      <div className="min-h-screen p-10 md:p-5">
+      <PenroseTiling />
+      <div className="min-h-screen p-2 xl:p-12 lg:p-8 md:p-4 relative z-10">
         <div className="max-w-[1200px] mx-auto">
         {/* Intro Section */}
-        <div className="mb-0">
+        <div className="mb-20">
           <div className="flex items-baseline justify-between gap-2 mb-[68px] flex-wrap">
             <div className="flex items-baseline gap-2">
               <p className="title"><strong>{content.intro.title}</strong></p>
@@ -60,7 +65,7 @@ function App() {
             </div>
             <p className="description">{content.intro.description}</p>
           </div>
-          <div className="flex gap-5 items-start mb-[60px] p-6 bg-[rgb(250,250,250)] rounded max-w-[560px]">
+          <div className={` ${whiteCardClasses}`}>
             {content.intro.bioIcon && (
               <img src={getGitHubImageUrl(content.intro.bioIcon)} alt="bio" className="w-[68px] h-[68px] object-cover flex-shrink-0" />
             )}
@@ -88,7 +93,7 @@ function App() {
             const section = content.sections[sectionKey]
 
             return (
-              <div key={sectionKey} className="mb-[60px] bg-white rounded">
+              <div key={sectionKey} className="mb-[60px] rounded">
                 <p className="section-title"><strong>{section.title}</strong></p>
                 <div className={`block ${sectionKey === 'tech' ? 'tech-grid' : sectionKey === 'art' ? 'art-grid' : ''}`}>
                   {section.items.map((item, index) => {
@@ -122,7 +127,7 @@ function App() {
                           href={linkUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex flex-row items-start gap-2.5 p-2.5 no-underline  pr-4 text-[rgb(0,0,238)] text-xs font-normal bg-[rgb(250,250,250)] border border-transparent rounded transition-colors hover:border-[rgb(200,200,200)]"
+                          className={` ${whiteCardClasses} hover:border-[rgb(200,200,200)] `}
                         >
                           {techContent}
                         </a>
@@ -131,7 +136,7 @@ function App() {
 
                     if (sectionKey === 'art') {
                       return (
-                        <div key={index} className="flex flex-col gap-2.5 p-2.5 bg-[rgb(250,250,250)] rounded">
+                        <div key={index} className={`flex flex-col gap-2.5 p-2.5 rounded ${whiteCardClasses}`}>
                           {item.image && (
                             <img src={getGitHubImageUrl(item.image)} alt={item.title} className="w-full h-[200px] object-cover" />
                           )}
@@ -145,7 +150,7 @@ function App() {
 
                     // thoughts section
                     return (
-                      <div key={index} className="flex flex-col gap-0">
+                      <div key={index} className={`flex flex-col gap-0 p-2.5 rounded ${whiteCardClasses}`}>
                         <div className="flex flex-col gap-4">
                         {item.image && (
                             <img src={getGitHubImageUrl(item.image)} alt={item.title} className="w-[285px] h-auto object-cover" />
