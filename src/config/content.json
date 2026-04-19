@@ -74,6 +74,11 @@
       "title": "art",
       "items": [
         {
+          "title": "Genuary 2026",
+          "period": "2026",
+          "instagram": "https://www.instagram.com/p/DTBKxqbjIxE/"
+        },
+        {
           "title": "exploration / exploitation",
           "period": "2023-",
           "image": "/images/exploration.jpg"
