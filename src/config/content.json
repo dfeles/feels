@@ -11,7 +11,6 @@
     },
     "name": "Daniel Feles",
     "social": [
-      { "label": "Instagram", "url": "https://www.instagram.com/d.ni37/" },
       { "label": "Twitter", "url": "https://x.com/d_ni31" }
     ]
   },
@@ -73,11 +72,6 @@
     "art": {
       "title": "art",
       "items": [
-        {
-          "title": "Genuary 2026",
-          "period": "2026",
-          "instagram": "https://www.instagram.com/p/DTBKxqbjIxE/"
-        },
         {
           "title": "exploration / exploitation",
           "period": "2023-",
