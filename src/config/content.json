@@ -9,7 +9,11 @@
       "text": "Kitchen Budapest",
       "url": "https://issuu.com/kitchenbudapest/docs/kibu-2007-summer/72"
     },
-    "name": "Daniel Feles"
+    "name": "Daniel Feles",
+    "social": [
+      { "label": "Instagram", "url": "https://www.instagram.com/d.ni37/" },
+      { "label": "Twitter", "url": "https://x.com/d_ni31" }
+    ]
   },
   "sections": {
     "tech": {
