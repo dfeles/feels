@@ -2,6 +2,7 @@
   "name": "feels",
   "version": "1.0.0",
   "type": "module",
+  "packageManager": "pnpm@10.17.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
